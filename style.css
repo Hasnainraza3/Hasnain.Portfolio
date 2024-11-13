@@ -1,0 +1,500 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f4f7fc;
+    color: #333;
+}
+
+/* Navbar */
+.nav_container {
+    background-color: #04155B;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+}
+
+.nav .logo {
+    height: 80px;
+}
+
+.nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.nav ul li a:hover {
+    color: #E5A700;
+}
+
+/* Hero Section */
+.hero {
+    background-color: #04155B;
+    color: white;
+    padding: 100px 20px;
+    text-align: center;
+}
+
+.hero-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.profile-img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border: 5px solid white;
+    transition: all 0.3s ease;
+}
+
+.profile-img:hover {
+    transform: scale(1.1);
+}
+
+.hero h1 {
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.hero h1 span {
+    color: #E5A700;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-top: 10px;
+    color: #E5A700;
+}
+
+.hero .btn {
+    padding: 12px 30px;
+    background-color: #E5A700;
+    color: #04155B;
+    font-weight: bold;
+    border-radius: 6px;
+    text-decoration: none;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+}
+
+.hero .btn:hover {
+    background-color: #333;
+    color: white;
+}
+
+/* About Section */
+.about {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #fff;
+}
+
+.about h2 {
+    font-size: 36px;
+    color: #04155B;
+    margin-bottom: 30px;
+}
+
+.about-content {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    align-items: center;
+}
+
+.about-img {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #04155B;
+}
+
+.about-text {
+    max-width: 600px;
+    text-align: left;
+}
+
+.about-text h3 {
+    font-size: 24px;
+    color: #04155B;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.about-text p {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #666;
+}
+
+/* Skills Section */
+.skills {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #f4f7fc;
+}
+
+.skills h2 {
+    font-size: 36px;
+    color: #04155B;
+    margin-bottom: 40px;
+    font-weight: bold;
+}
+
+.skills-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.skill {
+    background-color: #fff;
+    width: 250px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.skill:hover {
+    transform: scale(1.05);
+}
+
+.skill-icon img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 15px;
+    transition: all 0.3s ease;
+}
+
+.skill h3 {
+    font-size: 22px;
+    color: #04155B;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.skill-bar {
+    position: relative;
+    width: 100%;
+    height: 10px;
+    background-color: #e6e6e6;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.progress {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-color: #E5A700;
+    width: 0;
+    border-radius: 5px;
+    animation: progress-bar 2s ease-out forwards;
+}
+
+@keyframes progress-bar {
+    from {
+        width: 0;
+    }
+    to {
+        width: var(--progress-width);
+    }
+}
+
+.skill span {
+    font-size: 18px;
+    color: #666;
+    margin-top: 10px;
+    display: block;
+}
+
+/* Animating the progress bar based on the 'data-progress' value */
+.skill .progress {
+    width: 0;
+    transition: width 2s ease;
+}
+
+.skill[data-progress="90"] .progress {
+    --progress-width: 90%;
+}
+
+.skill[data-progress="85"] .progress {
+    --progress-width: 85%;
+}
+
+.skill[data-progress="75"] .progress {
+    --progress-width: 75%;
+}
+
+.skill[data-progress="70"] .progress {
+    --progress-width: 70%;
+}
+
+.skill[data-progress="80"] .progress {
+    --progress-width: 80%;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .skills-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+
+/* Portfolio Section */
+.portfolio {
+    padding: 60px 20px;
+    background-color: #f4f7fc;
+    text-align: center;
+}
+
+.portfolio h2 {
+    font-size: 36px;
+    color: #04155B;
+    margin-bottom: 30px;
+}
+
+.portfolio-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.portfolio-item {
+    position: relative;
+    width: 300px;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.portfolio-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.portfolio-item:hover .portfolio-overlay {
+    opacity: 1;
+}
+
+.portfolio-overlay h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.portfolio-overlay a {
+    font-size: 18px;
+    color: #E5A700;
+    text-decoration: none;
+}
+
+.portfolio-overlay a:hover {
+    color: white;
+}
+
+/* Testimonials Section */
+.testimonials {
+    padding: 60px 20px;
+    background-color: #fff;
+    text-align: center;
+}
+
+.testimonials h2 {
+    font-size: 36px;
+    color: #04155B;
+    margin-bottom: 30px;
+}
+
+.testimonial-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.testimonial-item {
+    width: 300px;
+    background-color: #f4f7fc;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.testimonial-item p {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.testimonial-item h4 {
+    font-size: 20px;
+    color: #04155B;
+    font-weight: bold;
+}
+
+/* Social Media Section */
+.social-media {
+    padding: 40px 20px;
+    text-align: center;
+    background-color: #04155B;
+}
+
+.social-media h2 {
+    color: white;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 24px;
+    transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #E5A700;
+}
+
+/* Footer */
+footer {
+    background-color: #04155B;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Contact Section */
+.contact {
+    padding: 40px 20px;
+    background-color: #fff;
+    text-align: center;
+}
+
+.contact h2 {
+    font-size: 36px;
+    color: #04155B;
+    margin-bottom: 30px;
+}
+
+.contact-info {
+    font-size: 18px;
+    color: #666;
+}
+
+.contact-info a {
+    color: #04155B;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .nav ul {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .portfolio-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .testimonial-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .social-icons {
+        flex-direction: column;
+    }
+}
+.btn-login {
+    background-color: #04155B;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+.btn-login:hover {
+    background-color: #E5A700;
+}
+
+/* General Content Styling */
+.imag_container {
+    margin-top: 120px;
+    text-align: center;
+}
+
+.abt_container {
+    padding: 50px;
+    text-align: center;
+}
+
+.per_container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 50px;
+}
+
